@@ -1,6 +1,6 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
-* Студент: [Anton Surov](https://up.htmlacademy.ru/adaptive/14/user/775623).
+* Студент: [Artem Terekhov](https://htmlacademy.ru/profile/id486913).
 * Наставник: `Неизвестно`.
 
 ---

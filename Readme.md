@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Artem Terekhov](https://htmlacademy.ru/profile/id486913).
-* Наставник: `Неизвестно`.
+* Наставник: `No name ^^`.
 
 ---
 

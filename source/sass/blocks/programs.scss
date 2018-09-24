@@ -1,20 +1,20 @@
 .programs {
+  @include container;
   display: flex;
   flex-direction: column;
 }
 
 .programs__card {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-
-  @include standard-padding;
+  margin-bottom: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: $accent-color;
 }
 
 .programs__caption {
   position: relative;
-  padding-top: 25px;
+  margin-top: 30px;
+  margin-bottom: 9px;
   padding-left: 72px;
   padding-bottom: 20px;
   font-size: 24px;
@@ -23,33 +23,38 @@
   text-transform: uppercase;
 
   &::before {
-    @include pseudo-element(20px, 0, 50px, 50px);
+    @include pseudo-element(-6px, 2px, 50px, 50px);
     background-color: $main-color;
     border-radius: 50%;
   }
 
-  &--lose-weight::before {
+  &--lose-weight::after {
+    @include pseudo-element(-9px, 10px, 35px, 49px);
     background-image: url("../img/icon-cat-slim.svg");
     background-position: center;
   }
 
-  &--gain-weight::before {
+  &--gain-weight::after {
+    @include pseudo-element(6px, -7px, 67px, 28px);
     background-image: url("../img/icon-cat-pro.svg");
     background-position: center;
   }
 }
 
 .programs__description {
+  margin: 0;
+  margin-bottom: 22px;
   font-family: $alternate-font;
   font-size: 14px;
   line-height: 18px;
+  color: #444444;
 }
 
 .programs__link {
   display: block;
   position: relative;
   padding-top: 18px;
-  padding-bottom: 20px;
+  padding-bottom: 22px;
   font-size: 16px;
   line-height: 16px;
   text-decoration: none;
@@ -57,8 +62,110 @@
   border-top: 2px solid $border-color-alternate-dark;
 
   &::before {
-    @include pseudo-element(17px, 100px, 24px, 11px);
+    @include pseudo-element(21px, 97px, 24px, 11px);
     background-image: url("../img/icon-right-arrow-long.svg");
     background-position: center;
+  }
+
+  &:hover {
+    &::before {
+      background-image: url("../img/icon-right-arrow-verylong.svg");
+    }
+  }
+
+  &:active {
+    color: rgba(17, 17, 17, 0.5);
+
+    &::before {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .programs__card {
+    margin-bottom: 30px;
+    padding-right: 284px;
+  }
+
+  .programs__caption {
+    margin-top: 76px;
+    margin-bottom: 5px;
+    padding-left: 34px;
+    font-size: 36px;
+
+    &::before {
+      @include pseudo-element(16px, 427px, 200px, 200px);
+    }
+
+    &--lose-weight::after {
+      @include pseudo-element(2px, 457px, 140px, 194px);
+    }
+
+    &--gain-weight::after {
+      @include pseudo-element(56px, 393px, 268px, 112px);
+    }
+  }
+
+  .programs__description {
+    width: 344px;
+    margin-bottom: 38px;
+    padding-left: 32px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .programs__link {
+    padding-left: 34px;
+    padding-bottom: 62px;
+    font-size: 20px;
+    line-height: 20px;
+    border: none;
+
+    &::before {
+      @include pseudo-element(23px, 165px, 24px, 11px);
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .programs {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 27px;
+  }
+
+  .programs__card {
+    width: 462px;
+    margin-bottom: 0;
+    padding-left: 52px;
+    padding-right: 56px;
+  }
+
+  .programs__caption {
+    margin-bottom: 54px;
+    padding-left: 162px;
+
+    &::before {
+      @include pseudo-element(-29px, 0, 100px, 100px);
+    }
+
+    &--lose-weight::after {
+      @include pseudo-element(-35px, 14px, 70px, 97px);
+    }
+
+    &--gain-weight::after {
+      @include pseudo-element(-7px, -18px, 134px, 56px);
+    }
+  }
+
+  .programs__description {
+    width: auto;
+    margin-bottom: 13px;
+    padding-left: 0;
+  }
+
+  .programs__link {
+    padding-left: 0;
   }
 }

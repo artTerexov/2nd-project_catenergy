@@ -1,13 +1,21 @@
 .product {
+  @include container;
   text-align: center;
   background-image: url("../img/index-can-mobile@1x.png"),
     url("../img/index-background-mobile@1x.jpg");
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/index-can-mobile@2x.png"),
+      url("../img/index-background-mobile@2x.jpg");
+  }
   background-repeat: no-repeat, no-repeat;
   background-position: 20px 167px, top;
 }
 
 .product__caption {
-  padding-top: 25px;
+  margin: 0;
+  margin-top: 27px;
+  margin-bottom: 25px;
   font-size: 36px;
   font-weight: 400;
   line-height: 36px;
@@ -15,8 +23,8 @@
 }
 
 .product__slogan {
-  padding-top: 0;
-  padding-bottom: 300px;
+  margin: 0;
+  padding-bottom: 301px;
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
@@ -24,7 +32,77 @@
 }
 
 .product__button {
-  margin-left: 20px;
-  margin-right: 20px;
   margin-bottom: 22px;
+}
+
+@media (min-width: $tablet-width) {
+  .product {
+    min-height: 868px;
+    text-align: left;
+    background-image: url("../img/index-can-tablet@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/index-can-tablet@2x.jpg");
+    }
+    background-repeat: no-repeat;
+    background-position: center 257px;
+  }
+
+  .product__caption {
+    width: 414px;
+    margin-top: 56px;
+    margin-bottom: 42px;
+    padding-left: 89px;
+    font-size: 60px;
+    line-height: 60px;
+    color: #000000;
+  }
+
+  .product__slogan {
+    margin-bottom: 47px;
+    padding-left: 89px;
+    padding-bottom: 0;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+  }
+
+  .product__button {
+    width: 206px;
+    margin-left: 89px;
+    padding-top: 17px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 17px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .product {
+    min-height: 696px;
+    background-image: url("../img/index-can-desktop@1x.png"),
+      url("../img/index-background-desktop@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/index-can-desktop@2x.png"),
+        url("../img/index-background-desktop@2x.jpg");
+    }
+    background-repeat: no-repeat, no-repeat;
+    background-position: 490px 88px, 649px -53px;
+  }
+
+  .product__caption {
+    margin-top: 169px;
+    padding-left: 80px;
+  }
+
+  .product__slogan {
+    margin-bottom: 52px;
+    padding-left: 80px;
+  }
+
+  .product__button {
+    margin-left: 80px;
+  }
 }
